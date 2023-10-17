@@ -1,7 +1,6 @@
 import psutil
 import os
 import csv
-
 # Define the name of the CSV file to be created
 csv_file = "processes_info.csv"
 
