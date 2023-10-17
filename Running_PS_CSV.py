@@ -15,5 +15,7 @@ with open(csv_file, 'w', newline='') as file:
     for process in psutil.process_iter(attrs=['pid', 'name', 'exe', 'memory_info', 'cpu_percent']):
         # Access the info dictionary. This is automatically returned by the psutil.process_iter command by default 
         pinfo = process.info
+        # Format the default mem view from the info dictionary for better user experience
+        pinfo['memory_info'] = pinfo['memory_info'].rss
         # Write the information for the current process to the CSV file
         writer.writerow(pinfo)
