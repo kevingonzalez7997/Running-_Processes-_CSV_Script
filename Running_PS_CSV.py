@@ -8,7 +8,7 @@ csv_file = "processes_info.csv"
 # Open the CSV file for writing
 with open(csv_file, 'w', newline='') as file:
     # Initialize a DictWriter, taking a list of dictionary 
-    writer = csv.DictWriter(file, fieldnames=["pid", "name", "exe", "memory", "CPU"], extrasaction='ignore')
+    writer = csv.DictWriter(file, fieldnames=["pid", "name", "exe", 'memory_info', 'cpu_percent'], extrasaction='ignore')
     # Write the header row in the CSV file
     writer.writeheader()
     # Iterate over the running processes with specific attributes
