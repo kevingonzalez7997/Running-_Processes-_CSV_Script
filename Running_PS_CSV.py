@@ -10,6 +10,4 @@ with open(csv_file, 'w', newline='') as file:
 
     for process in psutil.process_iter(attrs=['pid', 'name', 'exe', 'memory_info', 'cpu_percent']):
         pinfo = process.info
-        pinfo['cpu_percent'] = process.cpu_percent(interval=0.1)
-        pinfo['memory'] = pinfo['memory_info'].rss
         writer.writerow(pinfo)
